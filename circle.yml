@@ -24,6 +24,8 @@ dependencies:
 
 test:
   override:
+    - echo $PATH
+    - /google-cloud-sdk/bin/gcloud
     - gcloud
     - docker run -d -p 80:80 cullophid/hello-world;
     - sleep 5
