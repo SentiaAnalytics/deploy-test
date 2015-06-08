@@ -10,6 +10,8 @@ machine:
 dependencies:
   pre:
     - ls
+    - pwd
+    - sudo ls /
     - sudo apt-get update
     - sudo apt-get install -y -qq --no-install-recommends wget unzip python openssh-client python-openssl
     - sudo apt-get clean
