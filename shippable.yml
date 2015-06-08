@@ -1,5 +1,6 @@
 install:
   - echo "install"
+  - docker build -t cullophid/hello-world .
 
 script:
   - echo "script"
