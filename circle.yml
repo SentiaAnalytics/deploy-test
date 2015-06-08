@@ -4,7 +4,6 @@ machine:
   services:
     - docker
 
-
 dependencies:
   pre:
     - sudo apt-get update
