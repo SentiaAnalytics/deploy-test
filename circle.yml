@@ -14,7 +14,7 @@ dependencies:
     - sudo google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=/.bashrc --disable-installation-options
     - sudo google-cloud-sdk/bin/gcloud --quiet components update pkg-go pkg-python pkg-java preview alpha beta app
     - sudo google-cloud-sdk/bin/gcloud --quiet config set component_manager/disable_update_check true
-    - mkdir /.ssh
+    - sudo mkdir /.ssh
     - export PATH=/google-cloud-sdk/bin:$PATH
     - export HOME=/
   override:
