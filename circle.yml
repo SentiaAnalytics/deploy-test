@@ -3,6 +3,10 @@ machine:
     version: 0.12.0
   services:
     - docker
+  environment:
+    PATH: /google-cloud-sdk/bin:$PATH
+    HOME: /
+    CLOUDSDK_PYTHON_SITEPACKAGES: 1
 
 dependencies:
   pre:
@@ -10,13 +14,10 @@ dependencies:
     - sudo apt-get install -y -qq --no-install-recommends wget unzip python openssh-client python-openssl
     - sudo apt-get clean
     - wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip && unzip google-cloud-sdk.zip && rm google-cloud-sdk.zip
-    - export CLOUDSDK_PYTHON_SITEPACKAGES=1
     - sudo google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=/.bashrc --disable-installation-options
     - sudo google-cloud-sdk/bin/gcloud --quiet components update pkg-go pkg-python pkg-java preview alpha beta app
     - sudo google-cloud-sdk/bin/gcloud --quiet config set component_manager/disable_update_check true
     - sudo mkdir /.ssh
-    - export PATH=/google-cloud-sdk/bin:$PATH
-    - export HOME=/
   override:
     - docker info
     - docker build -t cullophid/hello-world .
