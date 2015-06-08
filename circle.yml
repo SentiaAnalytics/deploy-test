@@ -18,14 +18,12 @@ dependencies:
     - sudo google-cloud-sdk/bin/gcloud --quiet components update pkg-go pkg-python pkg-java preview alpha beta app
     - sudo google-cloud-sdk/bin/gcloud --quiet config set component_manager/disable_update_check true
     - sudo mkdir /.ssh
-  override:
-    - docker info
-    - docker build -t cullophid/hello-world .
 
 test:
   override:
     - echo $PATH
-    - /google-cloud-sdk/bin/gcloud
+    - ls /google-cloud-sdk/bin
+    - ./google-cloud-sdk/bin/gcloud
     - gcloud
     - docker run -d -p 80:80 cullophid/hello-world;
     - sleep 5
