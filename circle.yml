@@ -25,7 +25,7 @@ test:
   override:
     - echo $PATH
     - ls
-    - ls /google-cloud-sdk/bin
+    - ls ./google-cloud-sdk/bin
     - ./google-cloud-sdk/bin/gcloud
     - gcloud
     - docker run -d -p 80:80 cullophid/hello-world;
