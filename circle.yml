@@ -16,6 +16,6 @@ test:
     - sleep 5
     - curl --retry 10 --retry-delay 5 -v http://localhost
 
-deploy:
+deployment:
   override:
     docker push cullophid/hello-world
