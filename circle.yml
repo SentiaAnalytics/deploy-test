@@ -24,6 +24,7 @@ dependencies:
 test:
   override:
     - echo $PATH
+    - sudo chmod a+x google-cloud-sdk/bin/gcloud
     - ls google-cloud-sdk/bin
     - sudo google-cloud-sdk/bin/gcloud
     - ./google-cloud-sdk/bin/gcloud
