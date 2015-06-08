@@ -1,0 +1,14 @@
+install:
+  - echo "install"
+
+script:
+  - echo "script"
+
+after_success:
+  - echo "after success"
+
+after_failiure:
+  - echo "after fail"
+
+after_script:
+  - echo "after script"
